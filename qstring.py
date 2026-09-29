@@ -22,3 +22,8 @@ def build_query(data: dict[str, str | list[str]]) -> str:
         else:
             pairs.append((key, value))
     return urlencode(pairs)
+
+
+def first_value(data: dict[str, list[str]], key: str, default: str = "") -> str:
+    values = data.get(key) or []
+    return values[0] if values else default
