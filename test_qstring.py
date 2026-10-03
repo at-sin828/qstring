@@ -1,6 +1,6 @@
 import unittest
 
-from qstring import build_query, first_value, parse_query, without_key
+from qstring import build_query, first_value, parse_query, value_count, without_key
 
 
 class QstringTest(unittest.TestCase):
@@ -11,6 +11,8 @@ class QstringTest(unittest.TestCase):
         self.assertEqual(first_value(got, "tag"), "a")
         self.assertEqual(first_value(got, "missing", "no"), "no")
         self.assertEqual(without_key(got, "tag"), {"q": [""]})
+        self.assertEqual(value_count(got, "tag"), 2)
+        self.assertEqual(value_count(got, "missing"), 0)
         self.assertEqual(got["tag"], ["a", "b"])
 
 
