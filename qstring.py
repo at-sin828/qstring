@@ -28,6 +28,10 @@ def without_key(data: dict[str, list[str]], key: str) -> dict[str, list[str]]:
     return {name: list(values) for name, values in data.items() if name != key}
 
 
+def has_key(data: dict[str, list[str]], key: str) -> bool:
+    return key in data
+
+
 def value_count(data: dict[str, list[str]], key: str) -> int:
     return len(data.get(key) or [])
 
