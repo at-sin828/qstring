@@ -36,6 +36,10 @@ def key_names(data: dict[str, list[str]]) -> list[str]:
     return list(data)
 
 
+def key_count(data: dict[str, list[str]]) -> int:
+    return len(data)
+
+
 def value_count(data: dict[str, list[str]], key: str) -> int:
     return len(data.get(key) or [])
 
