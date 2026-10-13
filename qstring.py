@@ -40,6 +40,10 @@ def key_count(data: dict[str, list[str]]) -> int:
     return len(data)
 
 
+def empty_keys(data: dict[str, list[str]]) -> list[str]:
+    return [key for key, values in data.items() if not any(values)]
+
+
 def value_count(data: dict[str, list[str]], key: str) -> int:
     return len(data.get(key) or [])
 
