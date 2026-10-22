@@ -53,6 +53,10 @@ def last_value(data: dict[str, list[str]], key: str, default: str = "") -> str:
     return values[-1] if values else default
 
 
+def repeated_keys(data: dict[str, list[str]]) -> list[str]:
+    return [key for key, values in data.items() if len(values) > 1]
+
+
 def value_count(data: dict[str, list[str]], key: str) -> int:
     return len(data.get(key) or [])
 
