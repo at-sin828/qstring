@@ -1,6 +1,6 @@
 import unittest
 
-from qstring import build_query, empty_keys, filled_keys, first_value, has_key, key_count, key_names, last_value, parse_query, repeated_keys, unique_keys, value_count, without_key
+from qstring import build_query, empty_keys, filled_keys, first_value, has_key, key_count, key_names, last_value, parse_query, repeated_keys, unique_keys, value_count, without_key, unique_count
 
 
 class QstringTest(unittest.TestCase):
@@ -25,6 +25,8 @@ class QstringTest(unittest.TestCase):
         self.assertEqual(unique_keys(got), ["q"])
         self.assertEqual(got["tag"], ["a", "b"])
 
+
+        self.assertEqual(unique_count(got), 1)
 
 if __name__ == "__main__":
     unittest.main()
