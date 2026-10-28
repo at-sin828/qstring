@@ -68,3 +68,6 @@ def value_count(data: dict[str, list[str]], key: str) -> int:
 def first_value(data: dict[str, list[str]], key: str, default: str = "") -> str:
     values = data.get(key) or []
     return values[0] if values else default
+
+def unique_count(data: dict[str, list[str]]) -> int:
+    return len(unique_keys(data))
