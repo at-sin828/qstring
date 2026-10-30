@@ -71,3 +71,6 @@ def first_value(data: dict[str, list[str]], key: str, default: str = "") -> str:
 
 def unique_count(data: dict[str, list[str]]) -> int:
     return len(unique_keys(data))
+
+def repeat_count(data: dict[str, list[str]]) -> int:
+    return len(repeated_keys(data))
